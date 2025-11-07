@@ -1300,7 +1300,406 @@ const marketplaceStyles = {
     gap: '10px',
     marginTop: '15px',
     textAlign: 'left'
+
   }
 };
 
+  const styles = {
+    // Mobile-first responsive styles
+    container: {
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #35d07f 0%, #2e8b57 100%)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      fontFamily: 'Arial, sans-serif',
+      '@media (max-width: 768px)': {
+        padding: '10px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '5px',
+      }
+    },
+    loginCard: {
+      background: 'white',
+      borderRadius: '16px',
+      padding: '40px',
+      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+      width: '100%',
+      maxWidth: '500px',
+      textAlign: 'center',
+      marginBottom: '20px',
+      '@media (max-width: 768px)': {
+        padding: '30px 20px',
+        marginBottom: '15px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '20px 15px',
+        borderRadius: '12px',
+      }
+    },
+    walletConnectCard: {
+      background: 'white',
+      borderRadius: '16px',
+      padding: '30px',
+      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+      width: '100%',
+      maxWidth: '500px',
+      textAlign: 'center',
+      '@media (max-width: 768px)': {
+        padding: '25px 15px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '20px 10px',
+      }
+    },
+    title: {
+      color: '#2e8b57',
+      marginBottom: '10px',
+      fontSize: '2.5em',
+      '@media (max-width: 768px)': {
+        fontSize: '2em',
+      },
+      '@media (max-width: 480px)': {
+        fontSize: '1.8em',
+      }
+    },
+    subtitle: {
+      color: '#666',
+      marginBottom: '30px',
+      fontSize: '1.2em',
+      '@media (max-width: 768px)': {
+        fontSize: '1.1em',
+        marginBottom: '20px',
+      },
+      '@media (max-width: 480px)': {
+        fontSize: '1em',
+      }
+    },
+    roleButtons: {
+      marginBottom: '20px',
+      '@media (max-width: 480px)': {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+      }
+    },
+    roleButton: (isActive) => ({
+      margin: '5px',
+      padding: '12px 24px',
+      background: isActive ? '#35d07f' : '#f8f9fa',
+      color: isActive ? 'white' : '#666',
+      border: 'none',
+      borderRadius: '8px',
+      cursor: 'pointer',
+      fontSize: '16px',
+      fontWeight: '600',
+      '@media (max-width: 768px)': {
+        padding: '10px 20px',
+        fontSize: '14px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '12px 16px',
+        fontSize: '14px',
+        width: '100%',
+        margin: '2px 0',
+      }
+    }),
+    primaryButton: {
+      width: '100%',
+      background: '#35d07f',
+      color: 'white',
+      border: 'none',
+      padding: '15px',
+      borderRadius: '8px',
+      fontSize: '16px',
+      fontWeight: 'bold',
+      cursor: 'pointer',
+      marginBottom: '15px',
+      '@media (max-width: 768px)': {
+        padding: '12px',
+        fontSize: '15px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '14px',
+        fontSize: '14px',
+      }
+    },
+    walletConnectButton: {
+      width: '100%',
+      background: 'linear-gradient(135deg, #35d07f 0%, #2e8b57 100%)',
+      color: 'white',
+      border: 'none',
+      padding: '15px',
+      borderRadius: '10px',
+      fontSize: '16px',
+      fontWeight: '600',
+      cursor: 'pointer',
+      marginBottom: '15px',
+      '@media (max-width: 768px)': {
+        padding: '12px',
+        fontSize: '15px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '14px',
+        fontSize: '14px',
+      }
+    },
+    // Marketplace styles
+    marketplaceContainer: {
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '20px',
+      fontFamily: 'Arial, sans-serif',
+      background: '#f5f5f5',
+      minHeight: '100vh',
+      '@media (max-width: 768px)': {
+        padding: '15px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '10px',
+      }
+    },
+    header: {
+      background: 'white',
+      padding: '30px',
+      borderRadius: '12px',
+      marginBottom: '20px',
+      textAlign: 'center',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+      '@media (max-width: 768px)': {
+        padding: '20px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '15px',
+        marginBottom: '15px',
+      }
+    },
+    headerActions: {
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '15px',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      '@media (max-width: 480px)': {
+        flexDirection: 'column',
+        gap: '10px',
+      }
+    },
+    connectedInfo: {
+      background: '#f0f8f0',
+      padding: '10px 20px',
+      borderRadius: '8px',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '10px',
+      '@media (max-width: 480px)': {
+        padding: '8px 15px',
+        fontSize: '14px',
+      }
+    },
+    actionButton: {
+      background: '#35d07f',
+      color: 'white',
+      border: 'none',
+      padding: '10px 20px',
+      borderRadius: '8px',
+      cursor: 'pointer',
+      '@media (max-width: 480px)': {
+        padding: '8px 16px',
+        fontSize: '14px',
+        width: '100%',
+      }
+    },
+    logoutButton: {
+      background: '#ff6b6b',
+      color: 'white',
+      border: 'none',
+      padding: '10px 20px',
+      borderRadius: '8px',
+      cursor: 'pointer',
+      '@media (max-width: 480px)': {
+        padding: '8px 16px',
+        fontSize: '14px',
+        width: '100%',
+      }
+    },
+    productsGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gap: '20px',
+      marginBottom: '40px',
+      '@media (max-width: 768px)': {
+        gap: '15px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      },
+      '@media (max-width: 480px)': {
+        gridTemplateColumns: '1fr',
+        gap: '15px',
+        marginBottom: '30px',
+      }
+    },
+    productCard: {
+      background: 'white',
+      padding: '20px',
+      borderRadius: '12px',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+      textAlign: 'center',
+      '@media (max-width: 480px)': {
+        padding: '15px',
+      }
+    },
+    productHeader: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: '10px',
+      '@media (max-width: 480px)': {
+        flexDirection: 'column',
+        gap: '8px',
+        alignItems: 'flex-start',
+      }
+    },
+    category: {
+      background: '#e6f3ff',
+      padding: '4px 8px',
+      borderRadius: '6px',
+      fontSize: '12px',
+      color: '#0066cc',
+      '@media (max-width: 480px)': {
+        fontSize: '11px',
+      }
+    },
+    price: {
+      fontWeight: 'bold',
+      color: '#35d07f',
+      fontSize: '1.2em',
+      '@media (max-width: 480px)': {
+        fontSize: '1.1em',
+      }
+    },
+    productName: {
+      margin: '10px 0',
+      color: '#333',
+      '@media (max-width: 480px)': {
+        fontSize: '1.1em',
+        margin: '8px 0',
+      }
+    },
+    productDescription: {
+      color: '#666',
+      fontSize: '14px',
+      marginBottom: '15px',
+      '@media (max-width: 480px)': {
+        fontSize: '13px',
+      }
+    },
+    buyButton: {
+      width: '100%',
+      background: '#35d07f',
+      color: 'white',
+      border: 'none',
+      padding: '12px',
+      borderRadius: '8px',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+      marginBottom: '8px',
+      '@media (max-width: 480px)': {
+        padding: '10px',
+        fontSize: '14px',
+      }
+    },
+    greenNote: {
+      fontSize: '11px',
+      color: '#35d07f',
+      '@media (max-width: 480px)': {
+        fontSize: '10px',
+      }
+    },
+    modalOverlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0,0,0,0.5)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 1000,
+      padding: '20px',
+      '@media (max-width: 480px)': {
+        padding: '10px',
+      }
+    },
+    modal: {
+      background: 'white',
+      padding: '30px',
+      borderRadius: '12px',
+      maxWidth: '500px',
+      width: '90%',
+      '@media (max-width: 768px)': {
+        padding: '25px',
+      },
+      '@media (max-width: 480px)': {
+        padding: '20px',
+        width: '95%',
+      }
+    },
+    modalButtons: {
+      display: 'flex',
+      gap: '10px',
+      '@media (max-width: 480px)': {
+        flexDirection: 'column',
+      }
+    },
+    cancelButton: {
+      flex: 1,
+      background: '#6c757d',
+      color: 'white',
+      border: 'none',
+      padding: '12px',
+      borderRadius: '6px',
+      cursor: 'pointer',
+      '@media (max-width: 480px)': {
+        padding: '10px',
+      }
+    },
+    confirmButton: {
+      flex: 1,
+      background: '#35d07f',
+      color: 'white',
+      border: 'none',
+      padding: '12px',
+      borderRadius: '6px',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+      '@media (max-width: 480px)': {
+        padding: '10px',
+      }
+    },
+    demoInfo: {
+      background: '#fff3cd',
+      padding: '20px',
+      borderRadius: '12px',
+      border: '1px solid #ffeaa7',
+      marginTop: '20px',
+      '@media (max-width: 480px)': {
+        padding: '15px',
+        marginTop: '15px',
+      }
+    },
+    walletIcons: {
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '20px',
+      fontSize: '20px',
+      '@media (max-width: 480px)': {
+        gap: '15px',
+        fontSize: '18px',
+      }
+    }
+  };
 export default App;
